@@ -58,7 +58,7 @@ This project demonstrates a structured approach to analyzing real-world salary d
 from initial data wrangling to insightful visualization. It serves as a practical example of 
 using Python for business analytics and can be extended with predictive modeling or deeper statistical tests.
 
-# Titanic: Machine Learning from Disaster
+# 2. Titanic: Machine Learning from Disaster
 
 ![Kaggle Competition](https://img.shields.io/badge/Kaggle-Competition-blue) ![Python](https://img.shields.io/badge/Python-3.7%2B-brightgreen) ![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange) ![Status](https://img.shields.io/badge/Status-Completed-success)
 
