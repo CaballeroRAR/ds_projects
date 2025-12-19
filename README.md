@@ -44,11 +44,14 @@ Exploratory data analysis of employee compensation patterns in a small Indian co
 - Clear salary bands emerged across job roles and seniority levels
 
 ## Project Structure
+```
 1_employee_salary_analysis-kaggle_salary/
 ├── employee_salary_dataset.csv
 ├── salary_analysis.ipynb
 ├── README.md
 └── images/
+```
+
 ## Deliverables
 Visual summaries and statistical insights supporting HR compensation strategy, role benchmarking, and talent acquisition planning.
 
