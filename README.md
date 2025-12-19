@@ -1,121 +1,318 @@
-# 1. Employee Salary Analysis – Small Company in India 
-
-## Project Overview
-This project conducts an exploratory data analysis (EDA) of employee salary data from a small company in India. The objective is to uncover compensation trends based on role, experience, department, and education level, delivering data-driven insights into salary structures and key influencing factors.
-
-## Dataset
-- **File:** `employee_salary_dataset.csv`
-- **Source:** Kaggle – Public dataset on Indian employee salaries
-- **Records:** Approximately 500 employee entries
-- **Key Features:**
-  - Demographic: Age, Years of Experience
-  - Employment: Department, Job Role, Education Level
-  - Target: Salary
-
-## Tools & Libraries
-- Python (Pandas, NumPy)
-- Data Visualization (Matplotlib, Seaborn)
-- Jupyter Notebook
-
-## Analysis Steps
-
-### 1. Data Loading and Initial Inspection
-- Loaded the dataset using Pandas.
-- Inspected structure, data types, and summary statistics.
-- Identified missing values and potential outliers.
-
-### 2. Data Cleaning and Preparation
-- Addressed missing data appropriately.
-- Treated outliers in numerical columns, specifically Salary.
-- Standardized categorical variables for consistency.
-
-### 3. Exploratory Data Analysis (EDA)
-- **Univariate Analysis:** Examined distributions of Salary, Age, and Experience.
-- **Bivariate Analysis:**
-  - Analyzed correlation between Salary and Years of Experience.
-  - Compared Salary distributions across Departments and Job Roles.
-  - Evaluated the impact of Education Level on compensation brackets.
-- **Visualizations:**
-  - Histograms and box plots for salary distributions.
-  - Scatter plots illustrating the experience-salary relationship.
-  - Bar charts comparing average salaries by role and department.
-
-## Key Insights
-- Identified the highest and lowest-paying roles and departments within the company.
-- Quantified a strong positive correlation between years of experience and salary.
-- Highlighted how education level influences starting salary and growth trajectory.
-- Provided clear, visual summaries of salary trends to support HR and managerial decision-making.
-
-## Project Structure
-salary_dataset/
-|-- employee_salary_dataset.csv # Raw dataset
-|-- salary_analysis.ipynb # Main analysis notebook
-|-- README.md # Project documentation
-|-- images/ # Folder containing visualizations and charts
-
-# Conclusion
-This project demonstrates a structured approach to analyzing real-world salary data, 
-from initial data wrangling to insightful visualization. It serves as a practical example of 
-using Python for business analytics and can be extended with predictive modeling or deeper statistical tests.
-
-# 2. Titanic: Machine Learning from Disaster
-
-![Kaggle Competition](https://img.shields.io/badge/Kaggle-Competition-blue) ![Python](https://img.shields.io/badge/Python-3.7%2B-brightgreen) ![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange) ![Status](https://img.shields.io/badge/Status-Completed-success)
+# 1. Employee Salary Analysis – Small Company in India
 
 ## Overview
+Exploratory data analysis of employee compensation patterns in a small Indian company. This project examines how role, experience, department, and education level influence salary structures, delivering actionable insights for HR and management decision-making.
 
-This project tackles the famous **Kaggle Titanic - Machine Learning from Disaster** competition. The goal is to build a predictive model that answers the question: *"What sorts of people were more likely to survive?"* using passenger data (e.g., name, age, gender, socio-economic class). This serves as an introductory project to applied machine learning and data science workflows.
+## Dataset
+- **Source:** Kaggle – Indian Employee Salaries
+- **Records:** 50 employees
+- **Features:** Age, Years of Experience, Department, Job Role, Education Level, Salary
+
+## Tech Stack
+![Python](https://img.shields.io/badge/Python-Medium-182625?style=flat&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Medium-3D5A73?style=flat&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Medium-28403D?style=flat&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Medium-011F26?style=flat&logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-Medium-F2380F?style=flat&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Medium-28403D?style=flat&logo=jupyter&logoColor=white)
+
+## Methodology
+
+### Data Preparation
+- Cleaned dataset with Pandas: handled missing values and outlier treatment
+- Standardized categorical variables for consistency
+- Validated data types and statistical distributions
+
+### Analysis
+**Univariate Analysis**
+- Distribution analysis of Salary, Age, and Experience using histograms and box plots
+
+**Bivariate Analysis**
+- Experience vs. Salary correlation with scatter plots
+- Department and Role salary comparisons via bar charts
+- Education Level impact on compensation brackets
+
+**Visualizations**
+- Box plots for salary distribution by department and role
+- Scatter plots showing experience-salary relationship
+- Heatmaps for feature correlations
+
+## Key Findings
+- Strong positive correlation between years of experience and salary (quantified)
+- Identified highest/lowest-paying departments and roles
+- Education level significantly impacts starting salary and growth trajectory
+- Clear salary bands emerged across job roles and seniority levels
 
 ## Project Structure
-kaggle_titanic/
-├── titanic.ipynb # Main Jupyter notebook with full analysis
-├── data/
-│ ├── train.csv # Training dataset (provided by Kaggle)
-│ ├── test.csv # Test dataset (provided by Kaggle)
-│ └── gender_submission.csv # Example submission file
-├── submission.csv # Generated predictions for Kaggle
-├── README.md # This file
-└── requirements.txt # Python dependencies
+```
+1_employee_salary_analysis-kaggle_salary/
+├── employee_salary_dataset.csv
+├── salary_analysis.ipynb
+├── README.md
+└── images/
+```
 
-## Goals
+## Deliverables
+Visual summaries and statistical insights supporting HR compensation strategy, role benchmarking, and talent acquisition planning.
 
-- Perform **exploratory data analysis (EDA)** to understand relationships and patterns.
-- Apply **data preprocessing** including handling missing values, feature engineering, and encoding.
-- Build, compare, and evaluate multiple **machine learning models**.
-- Optimize model performance through **hyperparameter tuning**.
-- Generate a valid **submission file** for the Kaggle competition.
+**Skills Demonstrated:** Data Cleaning, EDA, Statistical Analysis, Data Visualization, Business Analytics
 
-## Key Steps
+# 2. Titanic Survival Prediction – Machine Learning Classification
 
-### 1. Data Exploration & Visualization
-- Examine survival rates by features: `Sex`, `Pclass`, `Age`, `Fare`, `Embarked`.
-- Identify relationships and correlations using statistical analysis and visualizations.
-- Create informative plots (bar charts, histograms, heatmaps, etc.) to uncover insights.
+## Overview
+End-to-end machine learning pipeline for predicting passenger survival on the Titanic. This project applies multiple classification algorithms with hyperparameter tuning and cross-validation to achieve optimal performance on the Kaggle Titanic dataset.
 
-### 2. Feature Engineering & Preprocessing
-- Extract titles from passenger names (`Mr`, `Mrs`, `Miss`, `Master`, etc.).
-- Create family size and alone status features from `SibSp` and `Parch`.
-- Fill/impute missing values in `Age`, `Embarked`, and `Fare` columns.
-- Convert categorical features into numerical representations via encoding.
+## Dataset
+- **Source:** Kaggle – Titanic: Machine Learning from Disaster
+- **Records:** 891 training samples, 418 test samples
+- **Features:** PassengerId, Pclass, Name, Sex, Age, SibSp, Parch, Ticket, Fare, Cabin, Embarked
+- **Target:** Survived (0 = No, 1 = Yes)
 
-### 3. Modeling
-Multiple classification algorithms are implemented and evaluated:
+## Tech Stack
+![Python](https://img.shields.io/badge/Python-Medium-182625?style=flat&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Medium-3D5A73?style=flat&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Medium-28403D?style=flat&logo=numpy&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit_Learn-Medium-2F3D40?style=flat&logo=scikitlearn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Medium-011F26?style=flat&logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-Medium-F2380F?style=flat&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Medium-28403D?style=flat&logo=jupyter&logoColor=white)
+
+## Methodology
+
+### Data Preparation
+- Handled missing values in Age, Cabin, and Embarked columns
+- Feature engineering: family size, title extraction from names, fare binning
+- Encoded categorical variables (Sex, Embarked, Pclass)
+- Outlier detection and treatment in Age and Fare
+
+### Exploratory Data Analysis
+**Univariate Analysis**
+- Distribution analysis of Age, Fare, and Pclass using histograms and box plots
+
+**Bivariate Analysis**
+- Survival rates by Sex, Pclass, and Embarked with count plots
+- Age distribution by survival status
+- Correlation heatmap of numerical features
+
+**Visualizations**
+- Count plots showing survival patterns by gender and class
+- Box plots comparing fare distribution across passenger classes
+- Heatmaps for feature correlation and missing data patterns
+
+### Machine Learning Pipeline
+**Models Implemented**
 - Logistic Regression
 - Random Forest Classifier
 - Support Vector Machine (SVM)
-- K-Nearest Neighbors (KNN)
-- Gradient Boosting Classifier
+- Gradient Boosting (XGBoost, LightGBM)
 
-### 4. Evaluation & Submission
-- Models are evaluated using **accuracy** and **cross-validation** scores.
-- The best-performing model is selected for final predictions.
-- Predictions on the test set are saved as `submission.csv` for Kaggle submission.
+**Model Optimization**
+- Cross-validation (K-Fold) for robust performance evaluation
+- Hyperparameter tuning with RandomizedSearchCV
+- Feature importance analysis to identify key predictors
 
-### Main dependencies:
+**Evaluation Metrics**
+- Accuracy, Precision, Recall, F1-Score
+- ROC-AUC curves for model comparison
+- Confusion matrix analysis
 
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- scikit-learn
-- jupyter
+## Key Findings
+- Gender was the strongest predictor of survival (females had higher survival rates)
+- Passenger class (Pclass) significantly impacted survival probability
+- Age and family size showed moderate correlation with survival
+- Ensemble methods (Random Forest, Gradient Boosting) outperformed linear models
+- Achieved competitive Kaggle leaderboard score through feature engineering and model tuning
+
+## Project Structure
+```
+2_titanic_machine_learning-kaggle_titanic/
+├── train.csv
+├── test.csv
+├── titanic_analysis.ipynb
+├── submission.csv
+├── README.md
+└── images/
+```
+
+## Deliverables
+Complete machine learning workflow from data exploration to model deployment, demonstrating classification techniques, hyperparameter optimization, and performance evaluation suitable for production environments.
+
+---
+**Skills Demonstrated:** ETL, Feature Engineering, Classification Models, Hyperparameter Tuning, Cross-Validation, Model Evaluation, Kaggle Competition Submission
+
+# 3. Gold Recovery Prediction – Industrial Process Optimization
+
+## Overview
+Regression modeling project for predicting gold recovery rates in an industrial mining operation. This project optimizes the flotation process by building predictive models that estimate gold concentration at different purification stages, enabling data-driven process improvements and cost reduction.
+
+## Dataset
+- **Source:** TripleTen Bootcamp – Gold Recovery Industrial Dataset
+- **Records:** ~16,000 process measurements
+- **Features:** Flotation reagent feeds, air amounts, fluid levels, metal concentrations (Au, Ag, Pb)
+- **Target:** Gold recovery percentage at rougher and final stages
+
+## Tech Stack
+![Python](https://img.shields.io/badge/Python-Medium-182625?style=flat&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Medium-3D5A73?style=flat&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Medium-28403D?style=flat&logo=numpy&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit_Learn-Medium-2F3D40?style=flat&logo=scikitlearn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Medium-011F26?style=flat&logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-Medium-F2380F?style=flat&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Medium-28403D?style=flat&logo=jupyter&logoColor=white)
+
+## Methodology
+
+### Data Preparation
+- Cleaned multi-stage process data with Pandas: handled missing values and anomalies
+- Feature engineering: calculated recovery rates using metallurgical formulas
+- Removed outliers in concentration measurements
+- Split data by process stages (rougher, primary cleaner, final)
+
+### Exploratory Data Analysis
+**Univariate Analysis**
+- Distribution analysis of metal concentrations and recovery rates
+- Time series visualization of process parameters
+
+**Bivariate Analysis**
+- Correlation between feed characteristics and recovery efficiency
+- Impact of reagent dosages on gold concentration
+- Stage-by-stage recovery analysis with scatter plots
+
+**Visualizations**
+- Line plots tracking concentration changes across purification stages
+- Heatmaps for feature correlation matrices
+- Box plots comparing recovery distributions by operational parameters
+
+### Machine Learning Pipeline
+**Models Implemented**
+- Linear Regression
+- Decision Tree Regressor
+- Random Forest Regressor
+- Gradient Boosting (XGBoost, LightGBM)
+
+**Model Optimization**
+- Cross-validation with custom sMAPE (symmetric Mean Absolute Percentage Error) metric
+- Hyperparameter tuning for ensemble methods
+- Feature importance analysis to identify key process variables
+
+**Evaluation Metrics**
+- sMAPE for rougher and final recovery stages
+- MAE (Mean Absolute Error) and RMSE (Root Mean Squared Error)
+- R² score for model fit assessment
+
+## Key Findings
+- Feed particle size and reagent concentrations were strongest predictors of recovery
+- Rougher stage performance significantly influenced final gold output
+- Ensemble methods (Random Forest, Gradient Boosting) achieved lowest sMAPE scores
+- Identified optimal process parameter ranges for maximizing recovery efficiency
+- Model predictions enable proactive adjustments to flotation conditions
+
+## Project Structure
+```
+3_gold_recovery_machine_learning-tripleten_gold recovery/
+├── gold_recovery_full.csv
+├── gold_recovery_train.csv
+├── gold_recovery_test.csv
+├── gold_recovery_analysis.ipynb
+├── README.md
+└── images/
+```
+## Deliverables
+End-to-end regression pipeline demonstrating industrial process optimization through machine learning. Models provide actionable insights for metallurgical engineers to improve gold extraction efficiency and reduce operational waste.
+
+---
+**Skills Demonstrated:** Regression Modeling, Feature Engineering, Industrial Process Analysis, Custom Metrics (sMAPE), Cross-Validation, Ensemble Methods, Domain-Specific Problem Solving
+
+# 4. Time Series Analysis – Taxi Demand Forecasting
+
+## Overview
+Time series forecasting project predicting hourly taxi demand at airport locations. This project applies statistical modeling and machine learning techniques to analyze temporal patterns, seasonal trends, and build predictive models that optimize fleet allocation and operational planning.
+
+## Dataset
+- **Source:** TripleTen Bootcamp – Historical Taxi Order Data
+- **Records:** Several months of hourly taxi orders
+- **Features:** Timestamp, number of orders
+- **Target:** Taxi order volume for next hour
+
+## Tech Stack
+![Python](https://img.shields.io/badge/Python-Medium-182625?style=flat&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Medium-3D5A73?style=flat&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Medium-28403D?style=flat&logo=numpy&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit_Learn-Medium-2F3D40?style=flat&logo=scikitlearn&logoColor=white)
+![Statsmodels](https://img.shields.io/badge/Statsmodels-Medium-182625?style=flat)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Medium-011F26?style=flat&logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-Medium-F2380F?style=flat&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Medium-28403D?style=flat&logo=jupyter&logoColor=white)
+
+## Methodology
+
+### Data Preparation
+- Resampled time series data to hourly intervals with Pandas
+- Handled missing timestamps and interpolated gaps
+- Created lag features and rolling statistics (moving averages, rolling std)
+- Split data chronologically for train/validation/test sets
+
+### Exploratory Data Analysis
+**Time Series Decomposition**
+- Trend analysis using moving averages
+- Seasonal pattern identification (daily, weekly cycles)
+- Stationarity tests (Augmented Dickey-Fuller test)
+
+**Temporal Analysis**
+- Hourly demand patterns across days of week
+- Peak hour identification and capacity planning insights
+- Correlation between time-based features and order volume
+
+**Visualizations**
+- Line plots showing demand trends over time
+- Seasonal decomposition plots (trend, seasonality, residuals)
+- Autocorrelation (ACF) and Partial Autocorrelation (PACF) plots
+- Heatmaps for hourly/daily demand patterns
+
+### Machine Learning Pipeline
+**Models Implemented**
+- ARIMA (AutoRegressive Integrated Moving Average)
+- Linear Regression with time features
+- Decision Tree Regressor
+- Random Forest Regressor
+- Gradient Boosting (XGBoost, LightGBM)
+
+**Feature Engineering**
+- Lag features (previous 1, 2, 3, 24 hours)
+- Rolling mean and standard deviation windows
+- Time-based features: hour, day of week, month
+- Holiday and weekend indicators
+
+**Model Optimization**
+- Cross-validation with time series split
+- Hyperparameter tuning for tree-based models
+- Feature importance analysis for interpretability
+
+**Evaluation Metrics**
+- RMSE (Root Mean Squared Error)
+- MAE (Mean Absolute Error)
+- MAPE (Mean Absolute Percentage Error)
+
+## Key Findings
+- Clear daily and weekly seasonality patterns in taxi demand
+- Peak hours identified: morning (7-9 AM) and evening (5-8 PM)
+- Weekend demand differs significantly from weekday patterns
+- Gradient Boosting models outperformed traditional ARIMA for complex patterns
+- Lag features and rolling statistics significantly improved prediction accuracy
+- Model enables 1-hour ahead forecasting with <10% RMSE threshold
+
+## Project Structure
+```
+4_time_series_analysis-tripleten_bootcamp/
+├── taxi_orders.csv
+├── time_series_analysis.ipynb
+├── README.md
+└── images/
+```
+
+## Deliverables
+Complete time series forecasting pipeline demonstrating statistical analysis, feature engineering, and predictive modeling for demand forecasting. Results support operational decisions for fleet management, driver scheduling, and resource optimization.
+
+---
+**Skills Demonstrated:** Time Series Analysis, Seasonal Decomposition, ARIMA Modeling, Lag Feature Engineering, Temporal Pattern Recognition, Demand Forecasting, Cross-Validation for Time Series
+
