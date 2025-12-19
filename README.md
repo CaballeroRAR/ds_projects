@@ -1,64 +1,61 @@
-# 1. Employee Salary Analysis – Small Company in India 
+# 1. Employee Salary Analysis – Small Company in India
 
-## Project Overview
-This project conducts an exploratory data analysis (EDA) of employee salary data from a small company in India. The objective is to uncover compensation trends based on role, experience, department, and education level, delivering data-driven insights into salary structures and key influencing factors.
+## Overview
+Exploratory data analysis of employee compensation patterns in a small Indian company. This project examines how role, experience, department, and education level influence salary structures, delivering actionable insights for HR and management decision-making.
 
 ## Dataset
-- **File:** `employee_salary_dataset.csv`
-- **Source:** Kaggle – Public dataset on Indian employee salaries
-- **Records:** Approximately 500 employee entries
-- **Key Features:**
-  - Demographic: Age, Years of Experience
-  - Employment: Department, Job Role, Education Level
-  - Target: Salary
+- **Source:** Kaggle – Indian Employee Salaries
+- **Records:** 50 employees
+- **Features:** Age, Years of Experience, Department, Job Role, Education Level, Salary
 
-## Tools & Libraries
-- Python (Pandas, NumPy)
-- Data Visualization (Matplotlib, Seaborn)
-- Jupyter Notebook
+## Tech Stack
+![Python](https://img.shields.io/badge/Python-Medium-182625?style=flat&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Medium-3D5A73?style=flat&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Medium-28403D?style=flat&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Medium-011F26?style=flat&logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-Medium-F2380F?style=flat&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Medium-28403D?style=flat&logo=jupyter&logoColor=white)
 
-## Analysis Steps
+## Methodology
 
-### 1. Data Loading and Initial Inspection
-- Loaded the dataset using Pandas.
-- Inspected structure, data types, and summary statistics.
-- Identified missing values and potential outliers.
+### Data Preparation
+- Cleaned dataset with Pandas: handled missing values and outlier treatment
+- Standardized categorical variables for consistency
+- Validated data types and statistical distributions
 
-### 2. Data Cleaning and Preparation
-- Addressed missing data appropriately.
-- Treated outliers in numerical columns, specifically Salary.
-- Standardized categorical variables for consistency.
+### Analysis
+**Univariate Analysis**
+- Distribution analysis of Salary, Age, and Experience using histograms and box plots
 
-### 3. Exploratory Data Analysis (EDA)
-- **Univariate Analysis:** Examined distributions of Salary, Age, and Experience.
-- **Bivariate Analysis:**
-  - Analyzed correlation between Salary and Years of Experience.
-  - Compared Salary distributions across Departments and Job Roles.
-  - Evaluated the impact of Education Level on compensation brackets.
-- **Visualizations:**
-  - Histograms and box plots for salary distributions.
-  - Scatter plots illustrating the experience-salary relationship.
-  - Bar charts comparing average salaries by role and department.
+**Bivariate Analysis**
+- Experience vs. Salary correlation with scatter plots
+- Department and Role salary comparisons via bar charts
+- Education Level impact on compensation brackets
 
-## Key Insights
-- Identified the highest and lowest-paying roles and departments within the company.
-- Quantified a strong positive correlation between years of experience and salary.
-- Highlighted how education level influences starting salary and growth trajectory.
-- Provided clear, visual summaries of salary trends to support HR and managerial decision-making.
+**Visualizations**
+- Box plots for salary distribution by department and role
+- Scatter plots showing experience-salary relationship
+- Heatmaps for feature correlations
+
+## Key Findings
+- Strong positive correlation between years of experience and salary (quantified)
+- Identified highest/lowest-paying departments and roles
+- Education level significantly impacts starting salary and growth trajectory
+- Clear salary bands emerged across job roles and seniority levels
 
 ## Project Structure
-salary_dataset/
-|-- employee_salary_dataset.csv # Raw dataset
-|-- salary_analysis.ipynb # Main analysis notebook
-|-- README.md # Project documentation
-|-- images/ # Folder containing visualizations and charts
+1_employee_salary_analysis-kaggle_salary/
+├── employee_salary_dataset.csv
+├── salary_analysis.ipynb
+├── README.md
+└── images/
+## Deliverables
+Visual summaries and statistical insights supporting HR compensation strategy, role benchmarking, and talent acquisition planning.
 
-# Conclusion
-This project demonstrates a structured approach to analyzing real-world salary data, 
-from initial data wrangling to insightful visualization. It serves as a practical example of 
-using Python for business analytics and can be extended with predictive modeling or deeper statistical tests.
+**Skills Demonstrated:** Data Cleaning, EDA, Statistical Analysis, Data Visualization, Business Analytics
 
 # 2. Titanic: Machine Learning from Disaster
+---
 
 ![Kaggle Competition](https://img.shields.io/badge/Kaggle-Competition-blue) ![Python](https://img.shields.io/badge/Python-3.7%2B-brightgreen) ![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange) ![Status](https://img.shields.io/badge/Status-Completed-success)
 
