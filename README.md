@@ -188,7 +188,6 @@ Regression modeling project for predicting gold recovery rates in an industrial 
 - Linear Regression
 - Decision Tree Regressor
 - Random Forest Regressor
-- Gradient Boosting (XGBoost, LightGBM)
 
 **Model Optimization**
 - Cross-validation with custom sMAPE (symmetric Mean Absolute Percentage Error) metric
