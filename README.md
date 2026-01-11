@@ -1,12 +1,13 @@
 # 1. Employee Salary Analysis – Small Company in India
 
 ## Overview
-Exploratory data analysis of employee compensation patterns in a small Indian company. This project examines how role, experience, department, and education level influence salary structures, delivering actionable insights for HR and management decision-making.
+Comprehensive exploratory data analysis and unsupervised learning project examining compensation patterns across a 50-employee dataset from a small Indian company. The analysis investigates salary determinants through statistical analysis, encoding techniques, feature scaling, and K-Means clustering to identify distinct employee segments based on compensation and demographic characteristics.
 
 ## Dataset
-- **Source:** Kaggle – Indian Employee Salaries
+- **Source:** Kaggle – Indian Employee Salaries Dataset
 - **Records:** 50 employees
-- **Features:** Age, Years of Experience, Department, Job Role, Education Level, Salary
+- **Features:** EmployeeID, Name, Age, Gender, City (Bangalore, Chennai, Delhi, Hyderabad, Mumbai), Years of Experience, Department (Finance, HR, IT, Marketing, Operations), Education Level (High School, Bachelor, Master, PhD), Monthly Salary (INR)
+- **Data Quality:** Complete dataset with no missing values
 
 ## Tech Stack
 ![Python](https://img.shields.io/badge/Python-Medium-182625?style=flat&logo=python&logoColor=white)
@@ -14,48 +15,70 @@ Exploratory data analysis of employee compensation patterns in a small Indian co
 ![NumPy](https://img.shields.io/badge/NumPy-Medium-28403D?style=flat&logo=numpy&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Medium-011F26?style=flat&logo=matplotlib&logoColor=white)
 ![Seaborn](https://img.shields.io/badge/Seaborn-Medium-F2380F?style=flat&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Medium-F7931E?style=flat&logo=scikit-learn&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Medium-28403D?style=flat&logo=jupyter&logoColor=white)
 
 ## Methodology
 
 ### Data Preparation
-- Cleaned dataset with Pandas: handled missing values and outlier treatment
-- Standardized categorical variables for consistency
-- Validated data types and statistical distributions
+- Loaded and inspected dataset using Pandas with comprehensive data profiling (shape, info, describe, duplicates check)
+- Verified data completeness: zero missing values across all features
+- Generated frequency distributions and cross-tabulations for categorical variables (Department, Education, Gender, City)
+- Created derived features: salary department ratios and aggregated statistics by multiple groupings
+
+### Feature Engineering & Encoding
+- Applied **Ordinal Encoding** to Experience_Years and Education_Level to preserve hierarchical relationships
+- Implemented **One-Hot Encoding** for nominal categorical variables (Department, City, Gender) to prepare data for machine learning
+- Performed **Min-Max Scaling** (0-1 normalization) on all numerical and encoded features for clustering analysis
+- Dropped non-predictive identifiers (EmployeeID, Name) to focus on analytical features
 
 ### Analysis
 **Univariate Analysis**
-- Distribution analysis of Salary, Age, and Experience using histograms and box plots
+- Examined salary distributions by Age using groupby aggregations and visualizations
+- Analyzed departmental salary budgets and employee counts across all departments
+- Investigated gender distribution within departments and cities
+- Evaluated education level distribution and average salaries by degree type
 
-**Bivariate Analysis**
-- Experience vs. Salary correlation with scatter plots
-- Department and Role salary comparisons via bar charts
-- Education Level impact on compensation brackets
+**Bivariate & Multivariate Analysis**
+- Explored Department vs. Education Level cross-tabulations to understand workforce composition
+- Analyzed salary patterns across Department, Education, and Gender simultaneously
+- Investigated average experience years by Education Level and Gender to identify career trajectory patterns
+- Examined geographic salary variations across five major Indian cities
+
+**Unsupervised Learning: K-Means Clustering**
+- Applied K-Means clustering algorithm on scaled features to segment employees into distinct groups
+- Generated employee clusters based on combined characteristics: experience, education, demographics, and salary
+- Enabled pattern discovery for workforce segmentation and compensation structure identification
 
 **Visualizations**
-- Box plots for salary distribution by department and role
-- Scatter plots showing experience-salary relationship
-- Heatmaps for feature correlations
+- Histograms and distribution plots for salary patterns by age groups
+- Bar charts comparing departmental salary allocations and employee counts
+- Cross-tabulation heatmaps for categorical variable relationships
+- Grouped comparisons visualizing salary differences across multiple dimensions
 
 ## Key Findings
-- Strong positive correlation between years of experience and salary (quantified)
-- Identified highest/lowest-paying departments and roles
-- Education level significantly impacts starting salary and growth trajectory
-- Clear salary bands emerged across job roles and seniority levels
+- **Department Analysis:** Marketing department accounts for 30.5% of total salary budget with 13 employees; IT follows with 18.6% allocation for 10 employees
+- **Education Impact:** Master's degree holders earn highest average monthly salary (₹86,258), contrary to expectations, PhD holders earn less (₹72,944)
+- **Gender Patterns:** Female employees with Bachelor's degrees average 10.8 years of experience vs. 6.7 years for males; distribution relatively balanced across departments
+- **Geographic Distribution:** Delhi houses 30% of workforce (15 employees), followed by Hyderabad (24%) and Bangalore (22%)
+- **Experience Distribution:** Relatively uniform experience levels across education tiers (9-11 years average), with slight variations by gender
+- **Clustering Results:** K-Means identified distinct employee segments enabling targeted HR strategies for compensation and retention
 
 ## Project Structure
 ```
 1_employee_salary_analysis-kaggle_salary/
-├── employee_salary_dataset.csv
-├── salary_analysis.ipynb
-├── README.md
-└── images/
+├─ dataset/
+│  ├─ employee_salary_dataset
+├─ graphs/
+├─ notebook/
+│  ├─ salary_analysis.ipynb
+
 ```
 
 ## Deliverables
-Visual summaries and statistical insights supporting HR compensation strategy, role benchmarking, and talent acquisition planning.
+Statistical insights, cross-tabulated workforce profiles, clustering-based employee segmentation models, and actionable visualizations supporting HR compensation benchmarking, departmental budget optimization, talent acquisition strategy, and evidence-based workforce planning for small-to-medium enterprises.
 
-**Skills Demonstrated:** Data Cleaning, EDA, Statistical Analysis, Data Visualization, Business Analytics
+**Skills Demonstrated:** Exploratory Data Analysis (EDA), Feature Engineering, Data Encoding (Ordinal & One-Hot), Feature Scaling, Unsupervised Machine Learning (K-Means Clustering), Statistical Analysis, Data Aggregation & Grouping, Business Analytics
 
 # 2. Titanic Survival Prediction – Machine Learning Classification
 
