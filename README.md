@@ -443,10 +443,10 @@ This project segments customers of a UK-based online retail store using RFM (Rec
 ## Project Structure
 ```
 6_cluster_retail-uci/
-├── graph_img/
-└── notebook/
-    ├── cluster_retail.ipynb
-    └── df_2010-2011.pkl
+├───graph_img
+└───notebook
+    ├───cluster_retail.ipynb
+    └───df_2010-2011.pkl
 ```
 
 ## Deliverables
