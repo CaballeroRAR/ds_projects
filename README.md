@@ -385,10 +385,10 @@ This project evaluates the performance of a new e-commerce webpage against an ol
 ## Project Structure
 ```
 5_a-b_test/
-├─ dataset/
-│  ├─ ab_test_click_data.csv
-├─ notebook/
-│  ├─ a-b_test.ipynb
+├───dataset
+│   └───ab_test_click_data.csv
+└───notebook
+    └───a-b_test.ipynb
 ```
 
 ## Deliverables
