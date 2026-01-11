@@ -67,12 +67,11 @@ Comprehensive exploratory data analysis and unsupervised learning project examin
 ## Project Structure
 ```
 1_employee_salary_analysis-kaggle_salary/
-├─ dataset/
-│  ├─ employee_salary_dataset
-├─ graphs/
-├─ notebook/
-│  ├─ salary_analysis.ipynb
-
+├───dataset
+│   └───employee_salary_dataset.csv
+├───graphs
+└───notebook
+    └───salary_analysis.ipynb
 ```
 
 ## Deliverables
@@ -149,12 +148,16 @@ End-to-end machine learning pipeline for predicting passenger survival on the Ti
 ## Project Structure
 ```
 2_titanic_machine_learning-kaggle_titanic/
-├── train.csv
-├── test.csv
-├── titanic_analysis.ipynb
-├── submission.csv
-├── README.md
-└── images/
+├───notebook
+│   └───titanic.ipynb
+├───submission
+│   ├───gender_submission.csv
+│   ├───lgb_submission.csv
+│   ├───submission_knn.csv
+│   └───submission.csv
+├───test.csv
+├───titanic.zip
+└───train.csv
 ```
 
 ## Deliverables
@@ -232,12 +235,12 @@ Regression modeling project for predicting gold recovery rates in an industrial 
 ## Project Structure
 ```
 3_gold_recovery_machine_learning-tripleten_gold recovery/
-├── gold_recovery_full.csv
-├── gold_recovery_train.csv
-├── gold_recovery_test.csv
-├── gold_recovery_analysis.ipynb
-├── README.md
-└── images/
+├───datasets
+│   ├───gold_recovery_full.csv
+│   ├───gold_recovery_test.csv
+│   └───gold_recovery_train.csv
+└───notebook
+    └───gold_recovery_notebook.ipynb
 ```
 ## Deliverables
 End-to-end regression pipeline demonstrating industrial process optimization through machine learning. Models provide actionable insights for metallurgical engineers to improve gold extraction efficiency and reduce operational waste.
@@ -326,10 +329,10 @@ Time series forecasting project predicting hourly taxi demand at airport locatio
 ## Project Structure
 ```
 4_time_series_analysis-tripleten_bootcamp/
-├── taxi_orders.csv
-├── time_series_analysis.ipynb
-├── README.md
-└── images/
+├───dataset
+│   └───taxi.csv
+└───notebook
+    └───time_series_analysis.ipynb
 ```
 
 ## Deliverables
@@ -338,3 +341,116 @@ Complete time series forecasting pipeline demonstrating statistical analysis, fe
 ---
 **Skills Demonstrated:** Time Series Analysis, Seasonal Decomposition, ARIMA Modeling, Lag Feature Engineering, Temporal Pattern Recognition, Demand Forecasting, Cross-Validation for Time Series
 
+# 5. A/B Test - E-commerce Website
+
+## Overview
+This project evaluates the performance of a new e-commerce webpage against an old design through A/B testing. By analyzing user click-through rates and conversion rates, it determines whether the new page provides a statistically significant improvement. The analysis employs hypothesis testing to provide a data-driven recommendation on whether to launch the new design.
+
+## Dataset
+-   **Source**: Internal A/B Test Data
+-   **Records**: User session data with page exposure and conversion events.
+-   **Features**: `user_id`, `timestamp`, `group` (control/treatment), `landing_page` (old_page/new_page), `converted` (0 or 1).
+
+## Tech Stack
+![Python](https://img.shields.io/badge/Python-Medium-182625?style=flat&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Medium-3D5A73?style=flat&logo=pandas&logoColor=white)
+![NumPy](https.img.shields.io/badge/NumPy-Medium-28403D?style=flat&logo=numpy&logoColor=white)
+![SciPy](https://img.shields.io/badge/SciPy-Medium-28403D?style=flat&logo=scipy&logoColor=white)
+![Statsmodels](https://img.shields.io/badge/Statsmodels-Medium-182625?style=flat)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Medium-011F26?style=flat&logo=matplotlib&logoColor=white)
+![Jupyter](httpshttps://img.shields.io/badge/Jupyter-Medium-28403D?style=flat&logo=jupyter&logoColor=white)
+
+## Methodology
+
+### Data Cleaning
+-   Aligned treatment and control groups to ensure accurate test exposure.
+-   Removed duplicate user entries to avoid data skew.
+-   Calculated observed conversion rates for both groups.
+
+### Hypothesis Testing
+-   **Null Hypothesis (H₀)**: The conversion rate of the new page is less than or equal to the old page.
+-   **Alternative Hypothesis (H₁)**: The conversion rate of the new page is greater than the old page.
+-   Simulated conversion rates under the null hypothesis to create a sampling distribution.
+-   Calculated the p-value by comparing the observed difference in conversion rates to the simulated distribution.
+
+### Statistical Analysis
+-   Used z-tests and computed z-scores and p-values to validate findings from the simulation.
+-   Established a significance level (alpha) of 0.05.
+
+## Key Findings
+-   The analysis concluded that there is not enough statistical evidence to reject the null hypothesis.
+-   The p-value was found to be greater than the significance level, indicating that the observed increase in conversion for the new page is not statistically significant.
+-   The recommendation is to not launch the new page without further testing or improvements, as it did not demonstrate a clear performance benefit over the old design.
+
+## Project Structure
+```
+5_a-b_test/
+├─ dataset/
+│  ├─ ab_test_click_data.csv
+├─ notebook/
+│  ├─ a-b_test.ipynb
+```
+
+## Deliverables
+A complete hypothesis testing framework and a data-driven recommendation for a business decision, supported by statistical analysis and simulations.
+
+---
+**Skills Demonstrated**: A/B Testing, Hypothesis Testing, Statistical Significance, P-value Calculation, Z-test, Data-driven Decision Making.
+
+# 6. Customer Segmentation with RFM Analysis – Online Retail
+
+## Overview
+This project segments customers of a UK-based online retail store using RFM (Recency, Frequency, Monetary) analysis and K-Means clustering. By analyzing transactional data, it groups customers into distinct segments to enable targeted marketing strategies, improve customer retention, and optimize promotional efforts.
+
+## Dataset
+- **Source:** UCI Machine Learning Repository - Online Retail II Dataset
+- **Records:** ~540,000 transactional records from 2010 to 2011.
+- **Features:** `InvoiceNo`, `StockCode`, `Description`, `Quantity`, `InvoiceDate`, `UnitPrice`, `CustomerID`, `Country`.
+
+## Tech Stack
+![Python](https://img.shields.io/badge/Python-Medium-182625?style=flat&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Medium-3D5A73?style=flat&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Medium-28403D?style=flat&logo=numpy&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Medium-F7931E?style=flat&logo=scikit-learn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Medium-011F26?style=flat&logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-Medium-F2380F?style=flat&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Medium-28403D?style=flat&logo=jupyter&logoColor=white)
+
+## Methodology
+
+### Data Cleaning and Preprocessing
+-   Loaded and cleaned transactional data, addressing missing `CustomerID` values.
+-   Filtered out cancellations and non-product transactions (e.g., bank charges, postage).
+-   Created a `TotalSales` feature by multiplying `Quantity` and `UnitPrice`.
+
+### RFM Feature Engineering
+-   **Recency**: Calculated the number of days since each customer's last purchase.
+-   **Frequency**: Calculated the total number of transactions for each customer.
+-   **Monetary**: Calculated the total monetary value of purchases for each customer.
+-   Handled outliers and skewed data by applying log transformations to the RFM metrics.
+
+### Customer Segmentation with K-Means
+-   Scaled the RFM features using `StandardScaler`.
+-   Applied the elbow method to determine the optimal number of clusters (k).
+-   Trained a K-Means clustering model to group customers into distinct segments based on their RFM profiles.
+-   Analyzed the characteristics of each customer segment.
+
+## Key Findings
+-   Identified distinct customer segments such as 'Top Customers', 'Loyal Customers', 'At-Risk Customers', and 'Lost Customers'.
+-   Each segment exhibits unique purchasing behaviors regarding recency, frequency, and monetary value.
+-   The segmentation provides actionable insights for creating tailored marketing campaigns, such as loyalty rewards for top customers or re-engagement campaigns for at-risk customers.
+
+## Project Structure
+```
+6_cluster_retail-uci/
+├── graph_img/
+└── notebook/
+    ├── cluster_retail.ipynb
+    └── df_2010-2011.pkl
+```
+
+## Deliverables
+A robust customer segmentation model that groups customers into meaningful segments. The analysis provides actionable recommendations for personalized marketing and customer relationship management.
+
+---
+**Skills Demonstrated**: Customer Segmentation, RFM Analysis, K-Means Clustering, Data Cleaning, Feature Engineering, Exploratory Data Analysis, Business Intelligence.
