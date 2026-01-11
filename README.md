@@ -385,10 +385,17 @@ This project evaluates the performance of a new e-commerce webpage against an ol
 ## Project Structure
 ```
 5_a-b_test/
+<<<<<<< HEAD
 ├───dataset
 │   └───ab_test_click_data.csv
 └───notebook
     └───a-b_test.ipynb
+=======
+├─ dataset/
+│  ├─ ab_test_click_data.csv
+├─ notebook/
+│  ├─ a-b_test.ipynb
+>>>>>>> 04a00a7692041029e2157c12e868eaa32b63758c
 ```
 
 ## Deliverables
@@ -443,10 +450,17 @@ This project segments customers of a UK-based online retail store using RFM (Rec
 ## Project Structure
 ```
 6_cluster_retail-uci/
+<<<<<<< HEAD
 ├───graph_img
 └───notebook
     ├───cluster_retail.ipynb
     └───df_2010-2011.pkl
+=======
+├── graph_img/
+└── notebook/
+    ├── cluster_retail.ipynb
+    └── df_2010-2011.pkl
+>>>>>>> 04a00a7692041029e2157c12e868eaa32b63758c
 ```
 
 ## Deliverables
