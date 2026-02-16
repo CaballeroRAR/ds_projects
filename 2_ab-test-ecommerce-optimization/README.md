@@ -6,7 +6,7 @@ This project evaluates the performance of a new e-commerce webpage against an ol
 ## Dataset
 - **Source**: Internal A/B Test Data
 - **Records**: User session data with page exposure and conversion events.
-- **Features**: `user_id`, `timestamp`, `group` (control/treatment), `landing_page` (old_page/new_page), `converted` (0 or 1).
+- **Features**: `user_id`, `timestamp`, `group` (con/exp), `click` (0 or 1).
 
 ## Tech Stack
 ![Python](https://img.shields.io/badge/Python-Medium-182625?style=flat&logo=python&logoColor=white)
@@ -32,12 +32,13 @@ This project evaluates the performance of a new e-commerce webpage against an ol
 
 ### Statistical Analysis
 - Used z-tests and computed z-scores and p-values to validate findings from the simulation.
-- Established a significance level (alpha) of 0.05.
+- Established a significance level (alpha) of 0.10.
 
 ## Key Findings
-- The analysis concluded that there is not enough statistical evidence to reject the null hypothesis.
-- The p-value was found to be greater than the significance level, indicating that the observed increase in conversion for the new page is not statistically significant.
-- The recommendation is to not launch the new page without further testing or improvements.
+- **Statistically Significant**: The A/B test yielded a p-value of approximately 0 (Z-score: 59.44), far below the 0.10 alpha threshold.
+- **Conversion Impact**: Experimental variant (`exp`) achieved a **61.16% conversion rate** vs. 19.89% in control (`con`)—a **41.27% absolute increase**.
+- **Practical Significance**: This effect size vastly exceeds the 1.07% MDE threshold.
+- **Recommendation**: Immediate implementation of the experimental variant as it demonstrates substantial business value.
 
 ## Project Structure
 ```
