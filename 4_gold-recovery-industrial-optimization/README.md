@@ -39,6 +39,7 @@ Regression modeling project for predicting gold recovery rates in an industrial 
 - Rougher stage performance significantly influenced final gold output.
 - Ensemble methods achieved the lowest sMAPE scores.
 - Identified optimal process parameters for maximizing extraction efficiency.
+- Model enables predictor of recovery within target sMAPE thresholds (Final sMAPE: 10.43%).
 
 ## Project Structure
 ```

@@ -40,7 +40,7 @@ Time series forecasting project predicting hourly taxi demand at airport locatio
 - Clear daily and weekly seasonality patterns identified.
 - Peak hours: Morning (7-9 AM) and Evening (5-8 PM).
 - Gradient Boosting models outperformed traditional ARIMA for complex patterns.
-- Model enables 1-hour ahead forecasting within target RMSE thresholds.
+- Model enables 1-hour ahead forecasting within target RMSE threshold (Final RMSE: 6.04, fulfilling the < 48 requirement).
 
 ## Project Structure
 ```
