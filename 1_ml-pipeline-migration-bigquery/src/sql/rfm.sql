@@ -1,5 +1,5 @@
 -- This script mirrors the compute_rfm_features logic from feature_engineering.py
--- Optimized with CROSS JOIN for performance.
+-- CROSS JOIN for performance.
 
 -- 1. GOLD TABLE: RFM for Year 1 (Training: 2009-2010)
 CREATE OR REPLACE TABLE `retail_segmentation.rfm_gold_2009_2010` AS
