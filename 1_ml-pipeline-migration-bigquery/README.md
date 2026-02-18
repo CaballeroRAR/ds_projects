@@ -44,10 +44,10 @@ python src/bq_pipeline.py
 ## Advanced Analytics & Visualizations
 The final analysis is documented in [notebooks/bq_analysis.ipynb](file:///c:/Users/arq_c/Desktop/ds_projects/1_ml-pipeline-migration-bigquery/notebooks/bq_analysis.ipynb), featuring:
 
-### 📈 Segment Drift Analysis
+### Segment Drift Analysis
 By training on 2009 data and scoring on 2011 data, we identify how the customer base migrates between segments (e.g., from *Champions* to *Hibernating*) over time.
 
-### 🌌 PCA Cluster Separation
+### PCA Cluster Separation
 Applying Principal Component Analysis (PCA) to reduce 3D RFM features into 2D space, visually confirming the distinct separation of customer segments and ensuring model stability across periods.
 
 ## Tech Stack
