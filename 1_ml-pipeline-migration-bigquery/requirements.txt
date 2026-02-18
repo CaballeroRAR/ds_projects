@@ -1,0 +1,12 @@
+google-cloud-bigquery
+pandas
+pandas-gbq
+pyarrow
+openpyxl
+pyyaml
+python-dotenv
+ipykernel
+matplotlib
+seaborn
+plotly
+scikit-learn
