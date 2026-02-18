@@ -8,14 +8,14 @@
 -- ##########################
 
 -- SILVER TABLES
--- Create Table for 2009-2010 (Training)
+-- 1. Create Table for 2009-2010
 CREATE OR REPLACE TABLE `retail_segmentation.etl_silver_2009_2010` AS
-SELECT DISTINCT -- Removes duplicated rows
+SELECT DISTINCT -- Removes duplicated rows (mirroring drop_duplicates)
   Invoice AS invoice,
   StockCode AS stock_code,
   Description AS description,
   CAST(Quantity AS INT64) AS quantity,
-  TIMESTAMP_TRUNC(InvoiceDate, HOUR) AS invoice_date, -- Trim InvoiceDate to hours
+  InvoiceDate AS invoice_date,
   CAST(Price AS FLOAT64) AS price,
   CAST(`Customer ID` AS INT64) AS customer_id,
   Country AS country,
@@ -33,14 +33,14 @@ WHERE
   -- Regex: Valid StockCodes (5 digits OR 5 digits + letters)
   AND REGEXP_CONTAINS(StockCode, r'^\d{5}$|^\d{5}[a-zA-Z]+$');
 
--- Create Table for 2010-2011 (Scoring)
+-- 2. Create Table for 2010-2011 (Scoring)
 CREATE OR REPLACE TABLE `retail_segmentation.etl_silver_2010_2011` AS
 SELECT DISTINCT
   Invoice AS invoice,
   StockCode AS stock_code,
   Description AS description,
   CAST(Quantity AS INT64) AS quantity,
-  TIMESTAMP_TRUNC(InvoiceDate, HOUR) AS invoice_date,
+  InvoiceDate AS invoice_date,
   CAST(Price AS FLOAT64) AS price,
   CAST(`Customer ID` AS INT64) AS customer_id,
   Country AS country,
