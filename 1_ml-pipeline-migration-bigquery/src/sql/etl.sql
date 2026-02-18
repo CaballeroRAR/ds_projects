@@ -19,7 +19,7 @@ SELECT DISTINCT -- Removes duplicated rows (mirroring drop_duplicates)
   CAST(Price AS FLOAT64) AS price,
   CAST(`Customer ID` AS INT64) AS customer_id,
   Country AS country,
-  (Quantity * Price) AS revenue
+
 FROM
   `retail_segmentation.raw_retail_2009_2010`
 WHERE
@@ -44,7 +44,7 @@ SELECT DISTINCT
   CAST(Price AS FLOAT64) AS price,
   CAST(`Customer ID` AS INT64) AS customer_id,
   Country AS country,
-  (Quantity * Price) AS revenue
+
 FROM
   `retail_segmentation.raw_retail_2010_2011`
 WHERE
