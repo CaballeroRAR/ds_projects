@@ -41,21 +41,18 @@ The entire pipeline is orchestrated via **`src/bq_pipeline.py`**, which manages 
 python src/bq_pipeline.py
 ```
 
-## Business Insights: Segment Drift Analysis
-By training on 2009 data and scoring on 2011 data, the pipeline identifies **Segment Drift**. This allows the business to track how many customers are migrating from **'Champions'** to **'At Risk'** or **'Hibernating'** over time.
+## Advanced Analytics & Visualizations
+The final analysis is documented in [notebooks/bq_analysis.ipynb](file:///c:/Users/arq_c/Desktop/ds_projects/1_ml-pipeline-migration-bigquery/notebooks/bq_analysis.ipynb), featuring:
 
-| Segment | 2009 Count | 2011 Count | % Change |
-|---------|------------|------------|----------|
-| Champions | ... | ... | ... |
-| Loyal | ... | ... | ... |
-| New / Promising | ... | ... | ... |
-| Hibernating | ... | ... | ... |
+### 📈 Segment Drift Analysis
+By training on 2009 data and scoring on 2011 data, we identify how the customer base migrates between segments (e.g., from *Champions* to *Hibernating*) over time.
 
----
+### 🌌 PCA Cluster Separation
+Applying Principal Component Analysis (PCA) to reduce 3D RFM features into 2D space, visually confirming the distinct separation of customer segments and ensuring model stability across periods.
 
 ## Tech Stack
 - **Cloud**: Google Cloud Platform (GCP)
 - **Data Warehouse**: BigQuery
 - **Machine Learning**: BigQuery ML (K-Means)
 - **Orchestration**: Python (Google Cloud SDK)
-- **Environment**: Python-dotenv, Pandas-GBQ
+- **Analytics**: Scikit-Learn (PCA), Seaborn, Pandas
