@@ -11,14 +11,32 @@ def ingest_data(file_path, sheet_name, table_name):
     
     PROJECT_ID = os.getenv("GCP_PROJECT_ID")
     DATASET_ID = os.getenv("GCP_DATASET_ID")
-    table_id = f"{PROJECT_ID}.{DATASET_ID}.{table_name}"
+    dataset_ref = client.dataset(DATASET_ID)
+    
+# Segment to check if dataset exist or to create it (check for credentials in GCP Console)
+    try:
+        client.get_dataset(dataset_ref)
+        print(f"Dataset {DATASET_ID} already exists.")
+    except Exception:
+        print(f"Dataset {DATASET_ID} not found. Creating it...")
+        dataset = bq.Dataset(dataset_ref)
+        dataset.location = "US"
+        client.create_dataset(dataset)
+        print(f"Dataset {DATASET_ID} created.")
 
+    table_id = f"{PROJECT_ID}.{DATASET_ID}.{table_name}"
     print(f"--- Processing Sheet: {sheet_name} ---")
     print(f"Reading data...")
     df = pd.read_excel(file_path, sheet_name=sheet_name)
-    # ----- Pyarrow cant parse correclty to objetc (str) so, it is forced here -----
-    df['Invoice'] = df['Invoice'].astype(str)
-    df['StockCode'] = df['StockCode'].astype(str)
+    # ----- Pyarrow cant parse correclty to correct data type so, it is forced here -----
+    # Numeric Conversion (Errors become NaN)
+    df['Quantity'] = pd.to_numeric(df['Quantity'], errors='coerce')
+    df['Price'] = pd.to_numeric(df['Price'], errors='coerce')
+    df['Customer ID'] = pd.to_numeric(df['Customer ID'], errors='coerce')
+    # String Conversion
+    # Cast to string, handle the 'nan' strings created by pandas
+    for col in ['Invoice', 'StockCode', 'Description', 'Country']:
+        df[col] = df[col].astype(str).replace('nan', None)
     # ----- END -----
     print(f"Uploading {len(df)} rows to {table_id}...")
     
