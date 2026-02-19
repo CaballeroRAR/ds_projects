@@ -42,6 +42,8 @@ graph LR
 ## Orchestration & Deployment
 The entire pipeline is orchestrated via **`src/bq_pipeline.py`**, which manages dependencies and executes the SQL transformation sequence.
 
+**Logging**: We use **Loguru** for advanced orchestration tracking, storing logs in `logs/pipeline.log` with automatic rotation and detailed error tracebacks.
+
 ```bash
 # Run the end-to-end pipeline
 python src/bq_pipeline.py
@@ -68,4 +70,5 @@ Applying Principal Component Analysis (PCA) to reduce 3D RFM features into 2D sp
 - Data Warehouse: BigQuery
 - Machine Learning: BigQuery ML (K-Means)
 - Orchestration: Python (Google Cloud SDK)
+- **Logging**: Loguru
 - Analytics: Scikit-Learn (PCA), Seaborn, Pandas

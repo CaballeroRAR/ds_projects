@@ -1,0 +1,21 @@
+2026-02-19 17:03:58.610 | INFO     | __main__:main:50 - ==================================================
+2026-02-19 17:03:58.615 | INFO     | __main__:main:51 - STARTING CLOUD-NATIVE SEGMENTATION PIPELINE
+2026-02-19 17:03:58.616 | INFO     | __main__:main:52 - ==================================================
+2026-02-19 17:03:58.619 | INFO     | __main__:main:56 - [STEP] Silver Layer (Data Cleaning)
+2026-02-19 17:03:58.620 | INFO     | __main__:run_sql_file:17 - Executing: src/sql/etl.sql...
+2026-02-19 17:04:06.276 | SUCCESS  | __main__:run_sql_file:34 - Finished: src/sql/etl.sql
+2026-02-19 17:04:06.277 | INFO     | __main__:main:56 - [STEP] Quality Layer (Raw RFM Metrics)
+2026-02-19 17:04:06.278 | INFO     | __main__:run_sql_file:17 - Executing: src/sql/rfm_quality.sql...
+2026-02-19 17:04:10.209 | SUCCESS  | __main__:run_sql_file:34 - Finished: src/sql/rfm_quality.sql
+2026-02-19 17:04:10.209 | INFO     | __main__:main:56 - [STEP] Ready Layer (Log-Transformed features)
+2026-02-19 17:04:10.210 | INFO     | __main__:run_sql_file:17 - Executing: src/sql/rfm_ready.sql...
+2026-02-19 17:04:13.561 | SUCCESS  | __main__:run_sql_file:34 - Finished: src/sql/rfm_ready.sql
+2026-02-19 17:04:13.561 | INFO     | __main__:main:56 - [STEP] ML Layer (Train K-Means Model)
+2026-02-19 17:04:13.562 | INFO     | __main__:run_sql_file:17 - Executing: src/sql/model_training.sql...
+2026-02-19 17:04:51.861 | SUCCESS  | __main__:run_sql_file:34 - Finished: src/sql/model_training.sql
+2026-02-19 17:04:51.861 | INFO     | __main__:main:56 - [STEP] Final Layer (Predict & Label segments)
+2026-02-19 17:04:51.862 | INFO     | __main__:run_sql_file:17 - Executing: src/sql/scoring.sql...
+2026-02-19 17:04:56.140 | SUCCESS  | __main__:run_sql_file:34 - Finished: src/sql/scoring.sql
+2026-02-19 17:04:56.140 | SUCCESS  | __main__:main:63 - ==================================================
+2026-02-19 17:04:56.141 | SUCCESS  | __main__:main:64 - PIPELINE COMPLETED SUCCESSFULLY in 57.53 seconds.
+2026-02-19 17:04:56.141 | SUCCESS  | __main__:main:65 - ==================================================
