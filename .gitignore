@@ -4,3 +4,4 @@
 /1_ml-pipeline-migration-bigquery/docs/
 /1_ml-pipeline-migration-bigquery/workflow.txt
 *.pyc
+/1_nlp-astroturfing-report/workflow.txt 
