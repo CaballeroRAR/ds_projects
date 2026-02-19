@@ -12,4 +12,4 @@ SELECT
   log_frequency,
   log_recency
 FROM
-  `retail_segmentation.rfm_gold_2009_2010`;
+  `retail_segmentation.rfm_ready_2009_2010`;

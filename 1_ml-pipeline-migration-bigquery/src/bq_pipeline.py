@@ -34,7 +34,8 @@ def main():
     # Define the sequence of files in dependency order
     pipeline_steps = [
         "src/sql/etl.sql",               # Silver Layer
-        "src/sql/rfm.sql",               # Gold Layer
+        "src/sql/rfm_quality.sql",       # Quality Layer (Raw RFM)
+        "src/sql/rfm_ready.sql",         # Gold Layer (Log RFM)
         "src/sql/model_training.sql",    # ML Training
         "src/sql/scoring.sql"            # Final Predictions & Labels
     ]

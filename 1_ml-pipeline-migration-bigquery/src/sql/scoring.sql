@@ -12,7 +12,7 @@ WITH raw_predictions AS (
     *
   FROM
     ML.PREDICT(MODEL `retail_segmentation.customer_segments_model`,
-      (SELECT * FROM `retail_segmentation.rfm_gold_2009_2010`))
+      (SELECT * FROM `retail_segmentation.rfm_ready_2009_2010`))
 )
 SELECT
   *,
@@ -33,7 +33,7 @@ WITH raw_predictions AS (
     *
   FROM
     ML.PREDICT(MODEL `retail_segmentation.customer_segments_model`,
-      (SELECT * FROM `retail_segmentation.rfm_gold_2010_2011`))
+      (SELECT * FROM `retail_segmentation.rfm_ready_2010_2011`))
 )
 SELECT
   *,
