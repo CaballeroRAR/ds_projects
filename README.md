@@ -5,9 +5,9 @@ This repository contains a collection of data science projects, ranging from ind
 ## Projects
 
 ### 1. [ML Pipeline Migration to BigQuery](file:///c:/Users/arq_c/Desktop/ds_projects/1_ml-pipeline-migration-bigquery/README.md)
-Cloud-native transition of ML workflows using Google Cloud Platform.
-- **Status:** [PLANNED]
-- **Key Skills:** GCP, BigQuery ML, SQL, ETL.
+Production-scalable migration of customer segmentation workflows to **Google Cloud BigQuery** using a **Medallion Architecture**.
+- **Key Findings:** Detected significant segment drift between 2009 and 2011; achieved stable clustering separation verified via PCA.
+- **Key Skills:** GCP (BigQuery ML), Medallion Architecture, SQL ETL, Python Orchestration (Loguru), Dimensionality Reduction (PCA).
 
 ### 2. [A/B Test - E-commerce Website Optimization](file:///c:/Users/arq_c/Desktop/ds_projects/2_ab-test-ecommerce-optimization/README.md)
 Statistical analysis of user conversion rates to drive design decisions.
