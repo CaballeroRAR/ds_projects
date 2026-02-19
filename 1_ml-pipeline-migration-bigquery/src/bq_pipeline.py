@@ -31,27 +31,35 @@ def run_sql_file(client, file_path):
 def main():
     client = get_bq_client()
     
-    # Define the sequence of files in dependency order
+    # Define the sequence of files with stage descriptions
     pipeline_steps = [
-        "src/sql/etl.sql",               # Silver Layer
-        "src/sql/rfm_quality.sql",       # Quality Layer (Raw RFM)
-        "src/sql/rfm_ready.sql",         # Gold Layer (Log RFM)
-        "src/sql/model_training.sql",    # ML Training
-        "src/sql/scoring.sql"            # Final Predictions & Labels
+        ("Silver Layer (Data Cleaning)", "src/sql/etl.sql"),
+        ("Quality Layer (Raw RFM Metrics)", "src/sql/rfm_quality.sql"),
+        ("Ready Layer (Log-Transformed features)", "src/sql/rfm_ready.sql"),
+        ("ML Layer (Train K-Means Model)", "src/sql/model_training.sql"),
+        ("Final Layer (Predict & Label segments)", "src/sql/scoring.sql")
     ]
     
     start_time = time.time()
-    print("--- Starting BigQuery ML Pipeline ---")
+    print("--------------------------------------------------")
+    print("STARTING CLOUD-NATIVE SEGMENTATION PIPELINE")
+    print("--------------------------------------------------")
     
-    for step in pipeline_steps:
-        success = run_sql_file(client, step)
+    for stage_name, script_path in pipeline_steps:
+        print(f"\n[STEP] {stage_name}")
+        success = run_sql_file(client, script_path)
         if not success:
-            print(f"Pipeline FAILED at step: {step}")
+            print(f"Pipeline FAILED at stage: {stage_name}")
             return
 
     duration = time.time() - start_time
-    print(f"\n Pipeline COMPLETED SUCCESSFULLY in {duration:.2f} seconds.")
-    print("--- Check your BigQuery console for the 'final_scored' tables ---")
+    print("\n" + "="*50)
+    print(f"PIPELINE COMPLETED SUCCESSFULLY in {duration:.2f} seconds.")
+    print("="*50)
+    print("\nNext Steps:")
+    print("1. Open 'notebooks/eda_etl.ipynb' to see Data Quality visuals.")
+    print("2. Open 'notebooks/bq_analysis.ipynb' for Cluster & Drift analysis.")
+    print("--------------------------------------------------")
 
 if __name__ == "__main__":
     main()
