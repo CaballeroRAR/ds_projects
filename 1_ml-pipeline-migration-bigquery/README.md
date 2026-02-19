@@ -49,6 +49,13 @@ The entire pipeline is orchestrated via **`src/bq_pipeline.py`**, which manages 
 python src/bq_pipeline.py
 ```
 
+### Environment Reset
+To delete all derived tables (Silver, Quality, Ready, Final) and ML models while keeping the raw ingestion data, run:
+
+```bash
+python src/bq_flush.py
+```
+
 ## Advanced Analytics & Visualizations
 
 ### Data Quality & ETL Showcase
