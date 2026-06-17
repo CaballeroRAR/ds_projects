@@ -5,6 +5,7 @@
 conf/local/**
 !conf/local/.gitkeep
 .telemetry
+sa-key.json
 
 .agent/
 # ignore potentially sensitive credentials files
