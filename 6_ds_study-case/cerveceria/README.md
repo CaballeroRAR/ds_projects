@@ -4,98 +4,64 @@
 
 ## Overview
 
-This is your new Kedro project, which was generated using `kedro 1.4.0`.
+Kedro project for extracting data from Google Sheets, validating it, performing a database discrepancy check, and pushing it to GCP BigQuery.
 
-Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
+## Project Structure
 
-## Rules and guidelines
-
-In order to get the best out of the template:
-
-* Don't remove any lines from the `.gitignore` file we provide
-* Make sure your results can be reproduced by following a data engineering convention
-* Don't commit data to your repository
-* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
-
-## How to install dependencies
-
-Declare any dependencies in `requirements.txt` for `pip` installation.
-
-To install them, run:
-
+```text
+cerveceria/
+├── conf/
+│   ├── base/
+│   │   ├── catalog.yml              # Dataset definitions (BigQuery & Memory)
+│   │   ├── parameters.yml           # Base configurations
+│   │   └── parameters_data_ingestion.yml
+│   └── local/
+│       └── credentials.yml          # Credentials (GCP, database access)
+└── src/
+    └── cerveceria/
+        ├── pipeline_registry.py     # Map & register Kedro pipelines
+        └── pipelines/
+            ├── data_ingestion.py    # Node to ingest Google Sheets data
+            ├── data_entry_validation.py # Chains validation & comparison nodes
+            └── nodes.py             # Data clean, format, & DB comparison logic
 ```
-pip install -r requirements.txt
+
+## Pipeline Architecture
+
+The project consists of three main steps:
+1. **Ingest**: Fetches data from Google Sheets and saves it to a memory dataset.
+2. **Validate**: Formats data, enforces types, and runs email validation.
+3. **Compare & Save**: Merges the newest extract with the existing BigQuery table on the `id` column to detect and log inserts, updates, and deletions, and saves the final dataframe.
+
+```mermaid
+graph TD
+    A[Google Sheet] -->|fetch_sheet_data_node| B(raw_sheet_data)
+    B -->|validate_data_entry_node| C(validated_sheet_data)
+    C -->|db_compare_node| D(quiero_chela_bq)
+    E[BigQuery Table] -->|quiero_chela_bq_read| D
+    D -->|Save| E
 ```
 
 ## How to run your Kedro pipeline
 
 You can run your Kedro project with:
 
-```
+```bash
 kedro run
+```
+
+## How to launch Kedro Viz
+
+To view an interactive visualization of the pipeline structure, run the following command in your terminal:
+
+```bash
+kedro viz run
 ```
 
 ## How to test your Kedro project
 
-Have a look at the file `tests/test_run.py` for instructions on how to write your tests. You can run your tests as follows:
+You can run your pipeline tests using:
 
-```
+```bash
 pytest
 ```
-
-You can configure the coverage threshold in your project's `pyproject.toml` file under the `[tool.coverage.report]` section.
-
-
-## Project dependencies
-
-To see and update the dependency requirements for your project use `requirements.txt`. You can install the project requirements with `pip install -r requirements.txt`.
-
-[Further information about project dependencies](https://docs.kedro.org/en/stable/kedro_project_setup/dependencies.html#project-specific-dependencies)
-
-## How to work with Kedro and notebooks
-
-> Note: Using `kedro jupyter` or `kedro ipython` to run your notebook provides these variables in scope: `context`, 'session', `catalog`, and `pipelines`.
->
-> Jupyter, JupyterLab, and IPython are already included in the project requirements by default, so once you have run `pip install -r requirements.txt` you will not need to take any extra steps before you use them.
-
-### Jupyter
-To use Jupyter notebooks in your Kedro project, you need to install Jupyter:
-
-```
-pip install jupyter
-```
-
-After installing Jupyter, you can start a local notebook server:
-
-```
-kedro jupyter notebook
-```
-
-### JupyterLab
-To use JupyterLab, you need to install it:
-
-```
-pip install jupyterlab
-```
-
-You can also start JupyterLab:
-
-```
-kedro jupyter lab
-```
-
-### IPython
-And if you want to run an IPython session:
-
-```
-kedro ipython
-```
-
-### How to ignore notebook output cells in `git`
-To automatically strip out all output cell contents before committing to `git`, you can use tools like [`nbstripout`](https://github.com/kynan/nbstripout). For example, you can add a hook in `.git/config` with `nbstripout --install`. This will run `nbstripout` before anything is committed to `git`.
-
-> *Note:* Your output cells will be retained locally.
-
-## Package your Kedro project
-
-[Further information about building project documentation and packaging your project](https://docs.kedro.org/en/stable/deploy/package_a_project/#package-an-entire-kedro-project)
