@@ -11,3 +11,10 @@ quiero_chela_bq:
   credentials: null
   save_args:
     if_exists: replace
+
+quiero_chela_bq_read:
+  type: pandas.GBQTableDataset
+  project: g-prometheus
+  dataset: cerveceria_data
+  table_name: quiero_chela
+  credentials: null

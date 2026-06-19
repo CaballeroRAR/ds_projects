@@ -12,7 +12,7 @@ def create_validation_pipeline(**kwargs) -> Pipeline:
             ),
             node(
                 func=db_compare,
-                inputs=["validated_sheet_data", "quiero_chela_bq"],
+                inputs=["validated_sheet_data", "quiero_chela_bq_read"],
                 outputs="quiero_chela_bq",
                 name="db_compare_node",
             ),
