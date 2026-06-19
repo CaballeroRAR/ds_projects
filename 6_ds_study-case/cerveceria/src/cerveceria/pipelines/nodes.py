@@ -33,7 +33,7 @@ def fetch_sheet_data() -> pd.DataFrame:
     
     return df
 
-def validate_sheet_data(df: pd.DataFrame) -> pd.DataFrame:
+def validate_data_entry(df: pd.DataFrame) -> pd.DataFrame:
     """Validates the extracted Google Sheet data before pushing to GCP."""
     logger = logging.getLogger(__name__)
     
